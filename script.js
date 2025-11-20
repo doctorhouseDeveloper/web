@@ -16,3 +16,13 @@ document.getElementById("contacto-form").addEventListener("submit", function(eve
     gracias.classList.add("visible");
   }, 400);
 });
+
+
+// ===== MENÚ HAMBURGUESA =====
+const btn = document.getElementById("hamburguesa-btn");
+const menu = document.getElementById("nav-menu");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("activo");
+  btn.classList.toggle("activo");
+});
