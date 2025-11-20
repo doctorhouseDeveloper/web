@@ -381,8 +381,18 @@ main > section#hero {
   display: grid;
   gap: 1.2rem;
   text-align: left;
+
+  /* Para animación al ocultarse */
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* Estado oculto con animación */
+#contacto form.hidden {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+/* Labels */
 #contacto label {
   font-weight: 500;
   color: #f0f0f0;
@@ -394,9 +404,9 @@ main > section#hero {
 #contacto textarea {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 1px solid #444; 
+  border: 1px solid #444;
   border-radius: 5px;
-  background-color: #ffffff; 
+  background-color: #ffffff;
   font-size: 1rem;
   color: var(--color-1);
   transition: border 0.3s ease, background-color 0.3s ease;
@@ -406,12 +416,11 @@ main > section#hero {
 #contacto textarea:focus {
   outline: none;
   border-color: var(--color-1); /* naranja coral */
-  
 }
 
 /* Botón enviar */
 #contacto button[type="submit"] {
-  background-color:white;
+  background-color: white;
   color: #080808;
   max-width: 200px;
   padding: 0.9rem 1.5rem;
@@ -428,6 +437,42 @@ main > section#hero {
 #contacto button[type="submit"]:hover {
   transform: translateY(-2px);
 }
+
+/* === Mensaje de agradecimiento === */
+#mensaje-gracias {
+  display: none; /* se muestra con JS */
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+
+  /* Animación suave */
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+#mensaje-gracias.visible {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#mensaje-gracias h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+#mensaje-gracias p {
+  font-size: 1.2rem;
+}
+
 
 
 /* === Footer === */
