@@ -1,28 +1,25 @@
-document.getElementById("contacto-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
+document.addEventListener("DOMContentLoaded", () => {
+  // FORMULARIO
   const form = document.getElementById("contacto-form");
   const gracias = document.getElementById("mensaje-gracias");
-  const descripcion = document.getElementById("contacto-desc"); // <--- nuevo
+  const descripcion = document.getElementById("contacto-desc");
 
-  // Ocultamos el texto también
-  descripcion.style.display = "none";
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    descripcion.style.display = "none";
+    form.classList.add("hidden");
+    setTimeout(() => {
+      form.style.display = "none";
+      gracias.classList.add("visible");
+    }, 400);
+  });
 
-  // Animación del formulario
-  form.classList.add("hidden");
+  // MENÚ HAMBURGUESA
+  const btn = document.getElementById("hamburguesa-btn");
+  const menu = document.getElementById("nav-menu");
 
-  setTimeout(() => {
-    form.style.display = "none";
-    gracias.classList.add("visible");
-  }, 400);
-});
-
-
-// ===== MENÚ HAMBURGUESA =====
-const btn = document.getElementById("hamburguesa-btn");
-const menu = document.getElementById("nav-menu");
-
-btn.addEventListener("click", () => {
-  menu.classList.toggle("activo");
-  btn.classList.toggle("activo");
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("active");  
+    btn.classList.toggle("activa");   
+  });
 });

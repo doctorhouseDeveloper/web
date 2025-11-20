@@ -163,30 +163,15 @@
   <p>WhatsApp: +54 9 11 1234 5678</p>
 </footer>
 
-<!-- JS -->
-<script src="script.js"></script>
+
 
 <!-- WhatsApp -->
 <a href="https://wa.me/5491124174863" class="wa-float" target="_blank" rel="noopener">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
 </a>
 
-<script>
-  document.getElementById("contacto-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío del formulario por defecto
-
-    // Mostrar el mensaje de agradecimiento
-    document.getElementById("mensaje-gracias").style.display = "block";
-    
-    // Aplicar la clase 'hidden' para ocultar el formulario con animación
-    document.getElementById("contacto-form").classList.add("hidden");
-
-    // Opcionalmente, ocultar el formulario después de un pequeño retraso
-    setTimeout(() => {
-      document.getElementById("contacto-form").style.display = "none";
-    }, 500); // Esto hace que el formulario se oculte después de la animación
-  });
-</script>
+<!-- JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
